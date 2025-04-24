@@ -15,7 +15,9 @@ export const Card = () => {
           <div className="p-4">
             <h2 className="font-semibold">Тайская кошка</h2>
             <button className="bg-blue-500 text-white px-4 py-1 rounded-full text-xs my-1">
-              Erbol:
+              <a href="https://youtube.com/shorts/E-yWsY2zMww?si=HAQuyHjsly3w_YMm">
+                Erbol:
+              </a>
             </button>
             <p className="text-xs mt-1">
               Внешние черты и характеристики тайской кошки: это сильные
@@ -35,7 +37,9 @@ export const Card = () => {
           <div className="p-4 pt-0">
             <h2 className="font-semibold text-black-800">Бамбино</h2>
             <button className="bg-blue-500 text-white px-4 py-1 rounded-full text-xs my-1">
-              Dniel:
+              <a href="https://youtube.com/shorts/MBuWQms1GCo?si=KX_XtSxZm6-satXf">
+                Dniel:
+              </a>
             </button>
             <p className="text-xs mt-1">
               Родиной породы кошек бамбино является Штат Арканзас США. Эта
@@ -54,7 +58,9 @@ export const Card = () => {
           <div className="p-4 pt-0">
             <h2 className="font-semibold text-black-800">Манчкин</h2>
             <button className="bg-blue-500 text-white px-4 py-1 rounded-full text-xs my-1">
-              Nur-Tilek:
+              <a href="https://youtube.com/shorts/dkXmLWzgRnM?si=E6vzaSiODSF1XHlp">
+                Nur-Tilek:
+              </a>
             </button>
             <p className="text-xs mt-1">
               Манчкины — это кошки с короткими лапками, результат естественной
@@ -72,7 +78,9 @@ export const Card = () => {
           <div className="p-4 pt-0">
             <h2 className="font-semibold text-black-800">Рагамаффин</h2>
             <button className="bg-blue-500 text-white px-4 py-1 rounded-full text-xs my-1">
-              Nurchik:
+              <a href="https://youtube.com/shorts/ve2n_flhtK0?si=p--pFHzyr8i2Vq_g">
+                Nurchik:
+              </a>
             </button>
             <p className="text-xs mt-1">
               Рагамаффины — это крупные и ласковые кошки с густой мягкой
