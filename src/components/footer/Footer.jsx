@@ -13,7 +13,7 @@ export const Footer = () => {
           </p>
         </div>
         <div className="mt-4 text-sm">
-          <a href="https://example.com/save-animals" target="_blank" rel="noopener noreferrer" className="text-black-700 hover:underline">
+          <a href="" target="_blank" rel="noopener noreferrer" className="text-black-700 hover:underline">
             Помогите кошкам и они подарят вам свою любовь
           </a>
         </div>
