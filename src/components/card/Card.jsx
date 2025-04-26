@@ -1,14 +1,28 @@
 import React, { useState } from "react";
 import Taika from "../../assets/icon/taika.jpg";
-import TaikaHover from "../../assets/icon/hover/bambinohover.png"; // Картинка для наведения
+import TaikaHover from "../../assets/icon/hover/bambinohover.png"; 
 import Bambino from "../../assets/icon/bambino.jpg";
-import BambinoHover from "../../assets/icon/hover/ragamaffinhover.png"; // Картинка для наведения
+import BambinoHover from "../../assets/icon/hover/ragamaffinhover.png"; 
 import Manchkin from "../../assets/icon/manchkin.jpg";
 import ManchkinHover from "../../assets/icon/hover/manchkinhover.jpg";
 import Ragamaffin from "../../assets/icon/ragamaffin.jpg";
 import RagamaffinHover from "../../assets/icon/hover/image.png";
+
 export const Card = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
+  const [hoverTimeout, setHoverTimeout] = useState(null);
+
+  const handleMouseEnter = (cardName) => {
+    const timeout = setTimeout(() => {
+      setHoveredCard(cardName);
+    }, 5000); 
+    setHoverTimeout(timeout);
+  };
+
+  const handleMouseLeave = () => {
+    clearTimeout(hoverTimeout); 
+    setHoveredCard(null);
+  };
 
   return (
     <div className="overflow-x-auto">
@@ -16,8 +30,8 @@ export const Card = () => {
         {/* Тайская кошка */}
         <div
           className="min-w-[300px] bg-white shadow-md rounded-md"
-          onMouseEnter={() => setHoveredCard("taika")}
-          onMouseLeave={() => setHoveredCard(null)}
+          onMouseEnter={() => handleMouseEnter("taika")}
+          onMouseLeave={handleMouseLeave}
         >
           <div className="flex justify-center p-4">
             <img
@@ -44,11 +58,11 @@ export const Card = () => {
           </div>
         </div>
 
-        {/* Бамбино */}
+
         <div
           className="min-w-[300px] bg-white shadow-lg rounded-md"
-          onMouseEnter={() => setHoveredCard("bambino")}
-          onMouseLeave={() => setHoveredCard(null)}
+          onMouseEnter={() => handleMouseEnter("bambino")}
+          onMouseLeave={handleMouseLeave}
         >
           <div className="flex justify-center p-4">
             <img
@@ -74,11 +88,11 @@ export const Card = () => {
           </div>
         </div>
 
-        {/* Манчкин */}
+
         <div
           className="min-w-[300px] bg-white shadow-md rounded-md"
-          onMouseEnter={() => setHoveredCard("manchkin")}
-          onMouseLeave={() => setHoveredCard(null)}
+          onMouseEnter={() => handleMouseEnter("manchkin")}
+          onMouseLeave={handleMouseLeave}
         >
           <div className="flex justify-center p-4">
             <img
@@ -103,11 +117,11 @@ export const Card = () => {
           </div>
         </div>
 
-        {/* Рагамаффин */}
+
         <div
           className="min-w-[300px] bg-white shadow-md rounded-md"
-          onMouseEnter={() => setHoveredCard("ragamaffin")}
-          onMouseLeave={() => setHoveredCard(null)}
+          onMouseEnter={() => handleMouseEnter("ragamaffin")}
+          onMouseLeave={handleMouseLeave}
         >
           <div className="flex justify-center p-4">
             <img
