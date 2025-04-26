@@ -1,8 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { About } from "../pages/About";
-import { Contact } from "../pages/Contact";
-
+import Contact from "../pages/Contact"; // Fixed import
 import { Footer } from "../components/footer/Footer";
 import Header from "../components/header/Header";
 import { Home } from "../pages/Home";
