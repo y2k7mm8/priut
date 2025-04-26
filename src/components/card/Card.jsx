@@ -1,16 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import Taika from "../../assets/icon/taika.jpg";
+import TaikaHover from "../../assets/icon/hover/bambinohover.png"; 
 import Bambino from "../../assets/icon/bambino.jpg";
+import BambinoHover from "../../assets/icon/hover/ragamaffinhover.png"; 
 import Manchkin from "../../assets/icon/manchkin.jpg";
+import ManchkinHover from "../../assets/icon/hover/manchkinhover.jpg";
 import Ragamaffin from "../../assets/icon/ragamaffin.jpg";
+import RagamaffinHover from "../../assets/icon/hover/image.png";
 
 export const Card = () => {
+  const [hoveredCard, setHoveredCard] = useState(null);
+  const [hoverTimeout, setHoverTimeout] = useState(null);
+
+  const handleMouseEnter = (cardName) => {
+    const timeout = setTimeout(() => {
+      setHoveredCard(cardName);
+    }, 5000); 
+    setHoverTimeout(timeout);
+  };
+
+  const handleMouseLeave = () => {
+    clearTimeout(hoverTimeout); 
+    setHoveredCard(null);
+  };
+
   return (
     <div className="overflow-x-auto">
       <div className="flex space-x-4">
-        <div className="min-w-[300px] bg-white shadow-md rounded-md">
+        {/* Тайская кошка */}
+        <div
+          className="min-w-[300px] bg-white shadow-md rounded-md"
+          onMouseEnter={() => handleMouseEnter("taika")}
+          onMouseLeave={handleMouseLeave}
+        >
           <div className="flex justify-center p-4">
-            <img src={Taika} className="rounded-xl" />
+            <img
+              src={hoveredCard === "taika" ? TaikaHover : Taika}
+              className="rounded-xl w-64 h-64 object-cover"
+              alt="Тайская кошка"
+            />
           </div>
           <div className="p-4">
             <h2 className="font-semibold">Тайская кошка</h2>
@@ -30,9 +58,18 @@ export const Card = () => {
           </div>
         </div>
 
-        <div className="min-w-[300px] bg-white shadow-lg rounded-md">
-          <div className="flex justify-center p-4 pt-4">
-            <img src={Bambino} className="rounded-xl" />
+
+        <div
+          className="min-w-[300px] bg-white shadow-lg rounded-md"
+          onMouseEnter={() => handleMouseEnter("bambino")}
+          onMouseLeave={handleMouseLeave}
+        >
+          <div className="flex justify-center p-4">
+            <img
+              src={hoveredCard === "bambino" ? BambinoHover : Bambino}
+              className="rounded-xl w-64 h-64 object-cover"
+              alt="Бамбино"
+            />
           </div>
           <div className="p-4 pt-0">
             <h2 className="font-semibold text-black-800">Бамбино</h2>
@@ -51,9 +88,18 @@ export const Card = () => {
           </div>
         </div>
 
-        <div className="min-w-[300px] bg-white shadow-md rounded-md">
+
+        <div
+          className="min-w-[300px] bg-white shadow-md rounded-md"
+          onMouseEnter={() => handleMouseEnter("manchkin")}
+          onMouseLeave={handleMouseLeave}
+        >
           <div className="flex justify-center p-4">
-            <img src={Manchkin} className="rounded-xl" />
+            <img
+              src={hoveredCard === "manchkin" ? ManchkinHover : Manchkin}
+              className="rounded-xl w-64 h-64 object-cover"
+              alt="Манчкин"
+            />
           </div>
           <div className="p-4 pt-0">
             <h2 className="font-semibold text-black-800">Манчкин</h2>
@@ -71,9 +117,18 @@ export const Card = () => {
           </div>
         </div>
 
-        <div className="min-w-[300px] bg-white shadow-md rounded-md">
+
+        <div
+          className="min-w-[300px] bg-white shadow-md rounded-md"
+          onMouseEnter={() => handleMouseEnter("ragamaffin")}
+          onMouseLeave={handleMouseLeave}
+        >
           <div className="flex justify-center p-4">
-            <img src={Ragamaffin} className="rounded-xl" />
+            <img
+              src={hoveredCard === "ragamaffin" ? RagamaffinHover : Ragamaffin}
+              className="rounded-xl w-64 h-64 object-cover"
+              alt="Рагамаффин"
+            />
           </div>
           <div className="p-4 pt-0">
             <h2 className="font-semibold text-black-800">Рагамаффин</h2>
